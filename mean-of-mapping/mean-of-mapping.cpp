@@ -1,7 +1,7 @@
 #include "mean-of-mapping.h"
 #include<fstream>
 #include<iostream>
-//getfile函数源代码是从网上po下来的，还未经过修改。读透其源代码后改成适合本项目的代码。
+
 ///
 #include<io.h>
 void getfile(string path, vector<list>& files)
@@ -23,7 +23,7 @@ void getfile(string path, vector<list>& files)
 			if ((fileinfo.attrib &  _A_SUBDIR))//这里的&运算符仍旧不知道是什么意思
 			{
 				if (strcmp(fileinfo.name, ".") != 0 && strcmp(fileinfo.name, "..") != 0)
-					getfile(p.assign(path).append("\\").append(fileinfo.name), files);
+					getfile(p.assign(path).append("\\").append(fileinfo.name), files);//用双反斜杠是因为第一个反斜杠表示“接下来的符号有特殊功能”，就像\t \a一样。
 			}
 			else
 			{
@@ -58,7 +58,7 @@ void mean(list& f)
 			continue;
 		} while (infile.get() != '('&&!infile.eof());//遇到左括号进而遇到mapping率之前，跳过所有字符；遇到eof则跳出循环
 		
-		int temp=0;
+		double temp=0;
 		infile >> temp;//抓取mapping率
 		total += temp;
 		string w_waste;
