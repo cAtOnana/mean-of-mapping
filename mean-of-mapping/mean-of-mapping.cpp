@@ -66,4 +66,5 @@ void mean(list& f)
 		times++;
 	}
 	f.mean = total / (--times);//log文件的最后一行不包含mapping率信息，对此进行修正。
+	f.rows = times;
 }

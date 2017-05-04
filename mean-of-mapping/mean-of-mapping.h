@@ -7,6 +7,7 @@ struct list
 {
 	std::string name;
 	double mean;
+	int rows;
 };
 
 void getfile(string path, vector<list>& files);//抓取某一目录下所有文件的文件名

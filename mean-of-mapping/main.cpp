@@ -16,9 +16,9 @@ int main(int argc,char* argv[]) {//参数为目标根目录
 	std::string outfile_name = argv[1];
 	outfile_name += "\\本目录平均mapping率表.xls";
 	ofstream outfile(outfile_name);
-	outfile << "文件名" <<"	"<<"平均mapping率" << std::endl;
+	outfile << "文件名" <<"	"<<"平均mapping率" <<"权重"<< std::endl;
 	for (int i = 0; i < file.size(); i++)
-		outfile << file[i].name << "	" << file[i].mean << std::endl;
+		outfile << file[i].name << "	" << file[i].mean <<"	" <<file[i].rows<< std::endl;
 	cout << "输出完毕，程序退出。";
 	return 0;
 }
